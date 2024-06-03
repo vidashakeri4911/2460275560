@@ -2,38 +2,25 @@
 #include <iostream>
 
 using namespace std;
-struct email{
-    char address[255];
+struct mobile{
+    char number[11];
     bool isvalid()
     {
-        int countAtsign=0,positionAt=-1,positionDot=-1;
-        for(int i=0;address[i]!='\0';i++){
-            if(address[i]=='@'){
-                countAtsign++;
-                if(positionAt==-1){
-                    positionAt=i;
-                }
-            }
-            if(address[i]=='.'){
-                positionDot=i;
-            }
-
-  }
-     if(countAtsign==1&&positionAt!=0&&positionAt<positionDot){
-        return true;
-     }
-     return false;
+        if(number[0]=='0'&&number[1]=='9'){
+            return 1;
+        }
+        return 0;
     }
 };
+
 int main()
 {
-    email e;
-    cin>>e.address;
-    if(e.isvalid()){
-        cout<<"I valid";
-    }
-
-
-    return 2;
+ mobile mobile;
+ cin>>mobile.number;
+ if(mobile.isvalid()){
+    cout<<"valid";
+ }else{
+     cout<<"valid";
+ }
+return 1;
 }
-
