@@ -1,39 +1,44 @@
 
+
 #include <iostream>
-
+#include<cstring>
 using namespace std;
-struct email{
-    char address[255];
-    bool isvalid()
-    {
-        int countAtsign=0,positionAt=-1,positionDot=-1;
-        for(int i=0;address[i]!='\0';i++){
-            if(address[i]=='@'){
-                countAtsign++;
-                if(positionAt==-1){
-                    positionAt=i;
-                }
-            }
-            if(address[i]=='.'){
-                positionDot=i;
-            }
-
-  }
-     if(countAtsign==1&&positionAt!=0&&positionAt<positionDot){
-        return true;
-     }
-     return false;
-    }
+struct ValiCard{
+    char prefix[4];
+    char bank[30];
 };
+ValiCard vcs[3];
+void x(){
+  strcpy(vcs[0].prefix,"5041");
+  strcpy(vcs[0].bank,"Resalat");
+  strcpy(vcs[1].prefix,"6037");
+  strcpy(vcs[1].bank,"Meli");
+  strcpy(vcs[2].prefix,"6104");
+  strcpy(vcs[2].bank,"Mellat");
+}
+  struct Card{
+      char number[16];
+      char bank[30];
+      bool isvalid()
+      {
+          for(int i=0;i<3;i++){
+            if(!strncmp(number,vcs[i].prefix,4)){
+                strcpy(bank,vcs[i].bank);
+                return true;
+            }
+          }
+          return false;
+      }
+  };
 int main()
 {
-    email e;
-    cin>>e.address;
-    if(e.isvalid()){
-        cout<<"I valid";
+ x();
+    Card card;
+    cin>>card.number;
+    if(card.isvalid()){
+        cout<<card.bank;
+    }else{
+        cout<<"Bad!";
     }
-
-
-    return 2;
+    return 0;
 }
-
