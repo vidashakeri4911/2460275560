@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-struct mobile{
+struct Mobile{
     char number[11];
     bool isvalid()
     {
@@ -15,7 +15,7 @@ struct mobile{
 
 int main()
 {
- mobile mobile;
+ Mobile mobile;
  cin>>mobile.number;
  if(mobile.isvalid()){
     cout<<"valid";
