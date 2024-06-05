@@ -4,16 +4,13 @@ using namespace std;
 
 int main()
 {
-  int a;
-  cin>>a;
-  int modA=0;
-  for(int i=2;i<(a/2);i++){
-    if(a&i==0){
-        modA++;
+    char a;
+    cin>>a;
+    if('9'>=a||'1'<=a){
+        cout<<"your char is number";
     }
-    if(modA==0){
-        cout<<"It is primary";
+    else{
+        cout<<"your char is'nt number";
     }
-  }
     return 0;
 }
