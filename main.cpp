@@ -4,14 +4,15 @@ using namespace std;
 
 int main()
 {
-    int num;
-    char ch;
-    cout<<"please enter a number:";
-    cin>>num;
-    cout<<"please enter a character:";
-    cin>>ch;
-    for(int i=0;i<num;i++)
-        cout<<ch<<endl;
+    int password,defaultpassword;
+    cout<<"Please enter defaultpassword:";
+    cin>>defaultpassword;
+    do{
+        cout<<"Enter Password:";
+        cin>>password;
+    }
+    while(password!=defaultpassword);
+    cout<<"Login Successed";
 
     return 0;
 }
