@@ -1,29 +1,36 @@
 #include <iostream>
 
 using namespace std;
-struct Car{
-    char brand[15];
-    char model[15];
-    int Carcard;
-    int drive(int a){
-        return Carcard+a;
-    }
-};
-void showdata(Car b){
-    cout<<"Brand:"<<b.brand<<endl;
-    cout<<"Model:"<<b.model<<endl;
-    cout<<"Distancedriven:"<<b.Carcard<<endl;
-}
+
 int main()
 {
-    Car c;
-    cin>>c.brand;
-    cin>>c.model;
-    cin>>c.Carcard;
-    showdata(c);
-    int Carcard2;
-    cout<<"cheghadr b Carcard ezafshe"<<endl;
-    cin>>Carcard2;
-    cout<<"Carcard afzayeshyafte:"<<c.drive(Carcard2);
+    int a1,a2,a3,n=0;
+    int coutPositire=0,coutNegetive=0;
+    float avrage;
+    cin>>a1>>a2>>a3;
+    if(a1>0){
+        coutPositire++;
+    }
+    if(a2>0){
+        coutPositire++;
+    }
+    if(a3>0){
+        coutPositire++;
+    }
+
+    if(a1<0){
+        coutNegetive++;
+    }
+    if(a2<0){
+        coutNegetive++;
+    }
+    if(a3<0){
+       coutNegetive++;
+    }
+    avrage=(a1+a2+a3)/3.0;
+    cout<<"Avrage:"<<avrage<<endl;
+    cout<<"N:"<<coutNegetive<<endl;
+    cout<<"P:"<<coutPositire;
+
     return 0;
 }
