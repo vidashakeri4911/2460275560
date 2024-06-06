@@ -1,63 +1,29 @@
 #include <iostream>
 
 using namespace std;
-int pow(int a,int b){
-    if(b==0){
-        return b;
-    }
-    return a*pow(a,b-1);
-}
-int fibo(int n){
-    if(n==1||n==2){
-        return 1;
-    }
-    return fibo(n-2)+fibo(n-1);
-}
-int zarb(int a,int b){
-    if(b==0){
-        return 1;
-    }
-    return a+zarb(a,b-1);
-}
-int fact(int n){
-    if(n==1){
-        return 1;
-    }
-    return n*fact(n-1);
-}
-struct calculator{
-    int lv,rv;
-    char op;
-    void run()
-    {
-        cout<<"enter operator"<<endl;
-        cin>>op;
-        switch(op){
-        case'^':
-            cin>>lv>>rv;
-            cout<<pow(lv,rv);
-            break;
-            case'f':
-            cin>>lv;
-            cout<<fibo(lv);
-            break;
-            case'*':
-            cin>>lv>>rv;
-            cout<<zarb(lv,rv);
-            break;
-            case'!':
-            cin>>lv;
-            cout<<fact(lv);
-            break;
-            default:
-            cout<<"Bad!";
-        }
+struct Car{
+    char brand[15];
+    char model[15];
+    int Carcard;
+    int drive(int a){
+        return Carcard+a;
     }
 };
-
+void showdata(Car b){
+    cout<<"Brand:"<<b.brand<<endl;
+    cout<<"Model:"<<b.model<<endl;
+    cout<<"Distancedriven:"<<b.Carcard<<endl;
+}
 int main()
 {
-    calculator c;
-    c.run();
+    Car c;
+    cin>>c.brand;
+    cin>>c.model;
+    cin>>c.Carcard;
+    showdata(c);
+    int Carcard2;
+    cout<<"cheghadr b Carcard ezafshe"<<endl;
+    cin>>Carcard2;
+    cout<<"Carcard afzayeshyafte:"<<c.drive(Carcard2);
     return 0;
 }
