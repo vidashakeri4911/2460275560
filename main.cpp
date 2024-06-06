@@ -1,20 +1,32 @@
+//calculator with switch.
 #include <iostream>
-#define pi 3.14
 using namespace std;
-float masahat(int n)
+int Operation (int a ,int b, char op)
 {
-    return pi*n*n;
-}
-float mohit(int a)
-{
-    return pi*a*2;
+    switch (op)
+        {
+        case '+':
+            cout << a+b;
+            break;
+        case '-':
+            cout <<a-b;
+            break;
+        case '*':
+            cout << a*b;
+            break;
+        case '/':
+            cout <<a/b;
+            break;
+
+        }
+    return 0;
 }
 int main()
 {
-    int r;
-    cout<<"enter Radius:";
-    cin>>r;
-    cout<<"Area of circle is:"<<masahat(r)<<endl;
-    cout<<"perimeter of circle is:"<<mohit(r);
+    int a,b;
+    char op;
+    cin >>a>>op>>b;
+    Operation(a,b,op);
+    cout << endl;
     return 0;
 }
