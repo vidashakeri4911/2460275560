@@ -1,55 +1,63 @@
 #include <iostream>
 
 using namespace std;
-int inRange(int x,int low,int high){
-    if(x>low&&x<high){
-        return 0;
+int pow(int a,int b){
+    if(b==0){
+        return b;
     }
-    else if(x<low&&x>high){
-        return 0;
-    }
-    else if(x>low&&x>high){
-            return 1;
-    }else{
-        return -1;
-    }
-
+    return a*pow(a,b-1);
 }
-int inRang(char x,char low,char high){
-    if(x>low&&x<high){
-        return 0;
+int fibo(int n){
+    if(n==1||n==2){
+        return 1;
     }
-     else if(x<low&&x>high){
-
-
-        return 0;
+    return fibo(n-2)+fibo(n-1);
 }
-
-else if(x>low&&x>high){
-            return 1;
-}
-else{
-        return -1;
+int zarb(int a,int b){
+    if(b==0){
+        return 1;
     }
-
+    return a+zarb(a,b-1);
 }
+int fact(int n){
+    if(n==1){
+        return 1;
+    }
+    return n*fact(n-1);
+}
+struct calculator{
+    int lv,rv;
+    char op;
+    void run()
+    {
+        cout<<"enter operator"<<endl;
+        cin>>op;
+        switch(op){
+        case'^':
+            cin>>lv>>rv;
+            cout<<pow(lv,rv);
+            break;
+            case'f':
+            cin>>lv;
+            cout<<fibo(lv);
+            break;
+            case'*':
+            cin>>lv>>rv;
+            cout<<zarb(lv,rv);
+            break;
+            case'!':
+            cin>>lv;
+            cout<<fact(lv);
+            break;
+            default:
+            cout<<"Bad!";
+        }
+    }
+};
 
 int main()
 {
-    char gens;
-    cout<<"lmport int or char?(i or c)";
-    cin>>gens;
-    if(gens=='c'||gens=='C'){
-        char a,b,c;
-        cout<<"enter 3 char:";
-        cin>>a>>b>>c;
-        cout<<inRange(a,b,c);
-    }
-    if(gens=='i'||gens=='l'){
-        int a,b,c;
-        cout<<"enter 3 integer:";
-        cin>>a>>b>>c;
-        cout<<inRange(a,b,c);
-    }
-    return 1;
+    calculator c;
+    c.run();
+    return 0;
 }
