@@ -1,13 +1,34 @@
 
 #include <iostream>
-using namespace std;
-int main()
+class Restaurant
 {
-        int i;
-        cout<<"please enter a number"<<endl;
-        cin>>i;
-        for(int a=1;a<=i;a++){
-        cout<<"*";
-        }
-        return 0;
-    }
+private:
+    bool menuEnabled;
+    int valueAddedTax;
+public:
+    Restaurant(): menuEnabled(true),
+        valueAddedTax(9){}
+
+                void disableMenu(){
+                    menuEnabled = false;
+                }
+                void setValueAddedTax(int taxRate){
+                valueAddedTax = taxRate;
+                }
+
+               void displaylnfo(){
+                   std::cout<<"Menu Enabled:"<<
+                    (menuEnabled?"Yes":"No")<<std::endl;
+                   std::cout<<"Value Added Tax Rate:"<<valueAddedTax<<"%"<<std::endl;
+               }
+};
+int main(){
+    Restaurant myRestaurant;
+    myRestaurant.displaylnfo();
+    myRestaurant.disableMenu();
+    myRestaurant.setValueAddedTax(12);
+    myRestaurant.displaylnfo();
+
+
+            return 0;
+};
